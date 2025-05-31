@@ -4,7 +4,9 @@ import Image from "next/image";
 
 export default function HomeImage() {
     return (
-        <div className="max-w-screen md:min-h-screen ">
+        <div className="max-w-screen xl:min-h-screen bg-linear-to-b from-[#05070e] via-[#101324] to-[#171f36]">
+
+
             <div className="w-full h-80% justify-center flex 2xl:pt-10" >
                 <h1 className="absolute block lg:hidden text-white  text-4xl md:text-5xl font-black leading-11 md:top-70 top-60 md:text-center px-4 z-10">
                     Soluciones digitales para hacer crecer tu negocio
@@ -24,7 +26,7 @@ export default function HomeImage() {
                     Desarrollo web, mobile, e-commerce y sistemas a medida
                 </h1>
 
-                <Button text="Solicitar cotizacion" bgColor="bg-[#cd2e63]" textColor="text-white" className='font-semibold text-2xl absolute xl:bottom-38 bottom-25' />
+                <Button text="Solicitar cotizacion" bgColor="bg-[#cd2e63]" className='font-semibold text-2xl absolute xl:bottom-38 bottom-29 hover:bg-white text-white hover:text-[#cd2e63]' />
                 <img
                     src="/empresaa.png"
                     alt="SaintTech"

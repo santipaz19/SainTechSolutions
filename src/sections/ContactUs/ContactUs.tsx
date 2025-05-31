@@ -1,24 +1,68 @@
+"use client"
 import Button from "@/components/Buttons/button";
-import InfoCard from "@/components/Cards/InfoCards";
-import Image from "next/image";
+import { useRef, useEffect } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 export default function ContactUs() {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+    const controls = useAnimation();
+
+    useEffect(() => {
+        if (isInView) {
+            controls.start("visible");
+        }
+    }, [isInView, controls]);
+
+    const variants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    };
+
     return (
-        <div className="bg-[--background] min-h-[82vh] flex items-center flex-col justify-center">
-
+        <div
+            ref={ref}
+            className="bg-[--background] min-h-[82vh] flex items-center flex-col justify-center"
+        >
             <div className="flex flex-col justify-center items-center">
-
-                <h1 className=" text-white text-5xl font-black leading-12 text-center w-full xl:w-[50vw] px-4 ">
+                <motion.h1
+                    variants={variants}
+                    initial="hidden"
+                    animate={controls}
+                    className="text-white text-5xl font-black leading-12 text-center w-full xl:w-[50vw] px-4"
+                >
                     ¿Qué estás esperando para transformar tu negocio?
-                </h1>
+                </motion.h1>
 
-                <h3 className="pt-14 w-full text-[#D1D5DB] text-xl sm:text-2xl font-semibold leading-8 text-center px-4 ">
+                <motion.h3
+                    variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.3, ease: "easeOut" } },
+                    }}
+                    initial="hidden"
+                    animate={controls}
+                    className="pt-14 w-full text-[#D1D5DB] text-xl sm:text-2xl font-semibold leading-8 text-center px-4"
+                >
                     Es hora de dar el siguiente paso. Te ayudamos a hacerlo posible.
-                </h3>
+                </motion.h3>
 
-                <Button text="Solicitar asesoría" bgColor="bg-[#cd2e63]" textColor="text-white" className='font-semibold py-4 text-2xl mt-15' />
-
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.6, ease: "easeOut" } },
+                    }}
+                    initial="hidden"
+                    animate={controls}
+                    className="mt-15"
+                >
+                    <Button
+                        text="Solicitar asesoría"
+                        bgColor="bg-[#cd2e63]"
+                        textColor="text-white"
+                        className="font-semibold py-4 text-2xl"
+                    />
+                </motion.div>
             </div>
-        </div >
+        </div>
     );
 }

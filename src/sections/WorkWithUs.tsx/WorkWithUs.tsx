@@ -1,4 +1,3 @@
-import Button from "@/components/Buttons/button";
 import InfoCard from "@/components/Cards/InfoCards";
 import Image from "next/image";
 
@@ -43,7 +42,7 @@ export default function WorkWithUs() {
                         />
                     </div>
 
-                    <div className="w-full lg:w-1/2 justify-center items-center hidden md:flex flex-col gap-10">
+                    <div className="w-full lg:w-1/2 justify-center items-center flex flex-col gap-10">
                         <InfoCard
                             title="Comunicación Clara y Constante"
                             emoji="💬"

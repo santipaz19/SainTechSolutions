@@ -59,8 +59,7 @@ export default function AboutUs() {
                         nuestro objetivo es crear soluciones a medida que mejoren procesos,
                         optimicen resultados y potencien negocios.
                         <br />
-                        Nos destacamos por trabajar con metodologías ágiles, una comunicación clara
-                        y un compromiso total con la calidad y la innovación.
+
                     </motion.h1>
                     <motion.h1
                         initial={{ opacity: 0 }}
@@ -84,8 +83,7 @@ export default function AboutUs() {
                 nuestro objetivo es crear soluciones a medida que mejoren procesos, optimicen
                 resultados y potencien negocios.
                 <br />
-                Nos destacamos por trabajar con metodologías ágiles, una comunicación clara y
-                un compromiso total con la calidad y la innovación.
+
             </motion.h1>
 
             <motion.h1

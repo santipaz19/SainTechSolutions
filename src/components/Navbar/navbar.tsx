@@ -5,15 +5,20 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { navbarLinks } from '@/constants/navbar';
 import Button from '../Buttons/button';
+import { useRouter } from 'next/navigation';
+
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
+    const router = useRouter();
+
     return (
         <nav className="flex items-center justify-between px-6 py-4 border-b border-[--border-color] bg-[#05070e] text-white max-w-screen relative z-50">
             {/* Logo + Nombre */}
-            <div className="flex gap-2 items-center">
+            <div onClick={() => router.push("/")} className="flex cursor-pointer gap-2 items-center">
                 <Image
+
                     src="/asaint.png"
                     alt="SaintTech"
                     width={64}
@@ -27,7 +32,7 @@ export default function Navbar() {
             </div>
 
             {/* Links desktop */}
-            <div className="hidden md:flex items-center  ">
+            <div className="hidden lg:flex items-center  ">
                 <ul className="flex items-center text-white mr-5">
                     {navbarLinks.map((link) => (
                         <li key={link.href} className="flex items-center">
@@ -41,11 +46,11 @@ export default function Navbar() {
                         </li>
                     ))}
                 </ul>
-                <Button text="Contáctanos" bgColor="bg-[#cd2e63]" className="font-semibold  text-xl lg:text-2xl hover:bg-white text-white hover:text-[#cd2e63]" />
+                <Button onClick={() => router.push("/contact")} text="Contáctanos" bgColor="bg-[#cd2e63]" className="font-semibold  text-xl lg:text-2xl hover:bg-white text-white hover:text-[#cd2e63]" />
             </div>
 
             {/* Botón hamburguesa */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
                 <button
                     onClick={() => setIsOpen(!isOpen)}
                     className="text-3xl focus:outline-none"
@@ -56,7 +61,7 @@ export default function Navbar() {
 
             {/* Menú mobile */}
             {isOpen && (
-                <div className="absolute top-full left-0 w-full bg-black border-t border-gray-700 flex flex-col gap-4 p-4 lg:hidden z-40">
+                <div className="absolute top-full left-0 w-full bg-[#05070e] border-t border-gray-700 flex flex-col gap-4 p-4 lg:hidden z-40">
                     {navbarLinks.map((link) => (
                         <Link
                             key={link.href}
@@ -68,6 +73,10 @@ export default function Navbar() {
                         </Link>
                     ))}
                     <Button
+                        onClick={() => {
+                            setIsOpen(false); // cierra el menú
+                            router.push("/contact");
+                        }}
                         text="Contáctanos"
                         bgColor="bg-[#cd2e63]"
                         textColor="text-white"

@@ -19,7 +19,7 @@ export default function Services() {
     }, [titleInView, cardsInView, titleControls, cardsControls]);
 
     const titleVariant = {
-        hidden: { opacity: 0, y: 300 },
+        hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
     };
 

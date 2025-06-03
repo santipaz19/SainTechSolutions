@@ -22,7 +22,7 @@ export const Card = ({
                 <p className="text-sm mb-4">{description}</p>
                 <button
 
-                    className="bg-[#e91e63] text-white font-bold py-2 px-4 rounded-md hover:brightness-110 transition shadow-md hover:shadow-lg"
+                    className="bg-[#e91e63] text-white font-bold py-2 px-4 rounded-md hover:brightness-110 transition shadow-md hover:shadow-lg hidden" //activar cuando este la info
                 >
                     {buttonText}
                 </button>

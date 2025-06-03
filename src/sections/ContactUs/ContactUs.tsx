@@ -2,11 +2,13 @@
 import Button from "@/components/Buttons/button";
 import { useRef, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function ContactUs() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
     const controls = useAnimation();
+    const router = useRouter();
 
     useEffect(() => {
         if (isInView) {
@@ -60,6 +62,7 @@ export default function ContactUs() {
                         bgColor="bg-[#cd2e63]"
                         textColor="text-white"
                         className="font-semibold py-4 text-2xl"
+                        onClick={() => router.push("/contact")}
                     />
                 </motion.div>
             </div>

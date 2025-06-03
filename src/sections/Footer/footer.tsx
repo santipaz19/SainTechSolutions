@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <div className="bg-[#ffffff] pb-3 ">
-            <footer className=" text-[#101324] pt-10 px-6 ">
+        <div className="bg-[#ffffff]  pb-3  ">
+            <footer className=" text-[#101324]  pt-10 px-6 ">
                 <div className="max-w-9xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
                     <div className=" justify-center  items-center flex-col hidden md:flex" >
                         <div className="flex items-center gap-3 pb-5">
@@ -31,11 +31,11 @@ export default function Footer() {
                     <div>
                         <h4 className="font-semibold mb-2">Servicios</h4>
                         <ul className="space-y-1 text-sm">
-                            <li><a href="/" className="hover:underline">   Desarrollo Web</a></li>
-                            <li><a href="/servicios" className="hover:underline"> Desarrollo Mobile</a></li>
-                            <li><a href="/contacto" className="hover:underline">
+                            <li><a className="hover:underline">   Desarrollo Web</a></li>
+                            <li><a className="hover:underline"> Desarrollo Mobile</a></li>
+                            <li><a className="hover:underline">
                                 Integraciones y APIs</a></li>
-                            <li><a href="/contacto" className="hover:underline">
+                            <li><a className="hover:underline">
 
                                 Sistemas de gestión y dashboards</a></li>
                         </ul>

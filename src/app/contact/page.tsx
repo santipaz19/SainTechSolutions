@@ -35,10 +35,10 @@ export default function ContactPage() {
 
         emailjs
             .send(
-                "service_389ybzh",     // Reemplazar con tu Service ID
-                "template_xr8iine",    // Reemplazar con tu Template ID
+                "service_389ybzh",
+                "template_xr8iine",
                 templateParams,
-                "UiJu8VREfQulwxGSz"      // Reemplazar con tu Public Key
+                "UiJu8VREfQulwxGSz"
             )
             .then(() => {
                 setSuccess(true);
@@ -59,7 +59,7 @@ export default function ContactPage() {
     };
 
     return (
-        <main className="min-h-[80vh] text-white flex items-center relative justify-center">
+        <main className="min-h-[85vh] text-white flex items-center relative justify-center">
             <img
                 src="/desarrollo-apps.jpg"
                 alt="SaintTech"
@@ -149,7 +149,7 @@ export default function ContactPage() {
                         </div>
                     </div>
 
-                    <div className="mt-10 text-sm text-gray-500">
+                    <div className="mt-10 text-sm text-gray-500 hidden md:flex">
                         © {new Date().getFullYear()} SainTech Solutions. Todos los derechos reservados.
                     </div>
                 </div>
